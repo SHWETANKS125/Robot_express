@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+$name=$_POST["name"];
+
+$pass=$_POST["pass"];
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +43,7 @@
           </div>
           <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
-            <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="User name" type="text">
+            <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="User_name" type="text">
             <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email">
             <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="password" type="password">
             <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">create</button>
@@ -49,4 +54,14 @@
       
 </body>
 </html>
+
+<?php
+
+$file=fopen("test.excel","a");
+fwrite($file,$User_name);
+fwrite($file,$password);
+fwrite($file,$Email);
+fclose($file);
+
+?>
 
